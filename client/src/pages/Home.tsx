@@ -1,7 +1,11 @@
+import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Lock, FileText, Users, ArrowRight, Shield, Clock, Zap } from "lucide-react";
+import { getLoginUrl } from "@/const";
 
 export default function Home() {
+  const { user, isAuthenticated, logout } = useAuth();
+
   return (
     <div className="min-h-screen bg-white" style={{ fontFamily: "'Poppins', sans-serif" }}>
       {/* Header */}
@@ -16,12 +20,34 @@ export default function Home() {
             <a href="#business" className="text-gray-700 hover:text-[#2ECC71] transition">Business</a>
           </nav>
           <div className="flex items-center gap-4">
-            <Button variant="outline" className="border-[#2ECC71] text-[#2ECC71] hover:bg-[#2ECC71] hover:text-white">
-              Sign In
-            </Button>
-            <Button className="bg-[#2ECC71] text-white hover:bg-[#26B35F]">
-              Get Started
-            </Button>
+            {isAuthenticated ? (
+              <>
+                <span className="text-gray-700">Welcome, {user?.name}</span>
+                <Button 
+                  variant="outline" 
+                  className="border-[#2ECC71] text-[#2ECC71] hover:bg-[#2ECC71] hover:text-white"
+                  onClick={logout}
+                >
+                  Sign Out
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button 
+                  variant="outline" 
+                  className="border-[#2ECC71] text-[#2ECC71] hover:bg-[#2ECC71] hover:text-white"
+                  onClick={() => window.location.href = getLoginUrl()}
+                >
+                  Sign In
+                </Button>
+                <Button 
+                  className="bg-[#2ECC71] text-white hover:bg-[#26B35F]"
+                  onClick={() => window.location.href = getLoginUrl()}
+                >
+                  Get Started
+                </Button>
+              </>
+            )}
           </div>
         </div>
       </header>
@@ -37,7 +63,10 @@ export default function Home() {
               Afa'a Pay is the trust infrastructure for digital payments in Africa. Secure transactions, instant resolution, and verifiable documentation for SMEs, independents, and everyone.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-[#2ECC71] text-white hover:bg-[#26B35F] text-lg px-8 py-6">
+              <Button 
+                className="bg-[#2ECC71] text-white hover:bg-[#26B35F] text-lg px-8 py-6"
+                onClick={() => window.location.href = getLoginUrl()}
+              >
                 Start Your Journey <ArrowRight className="ml-2" />
               </Button>
               <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#001F3F] text-lg px-8 py-6">
@@ -169,7 +198,10 @@ export default function Home() {
                   </div>
                 </li>
               </ul>
-              <Button className="bg-[#2ECC71] text-white hover:bg-[#26B35F] text-lg px-8 py-6">
+              <Button 
+                className="bg-[#2ECC71] text-white hover:bg-[#26B35F] text-lg px-8 py-6"
+                onClick={() => window.location.href = getLoginUrl()}
+              >
                 Create Personal Account
               </Button>
             </div>
@@ -221,7 +253,10 @@ export default function Home() {
                   </div>
                 </li>
               </ul>
-              <Button className="bg-[#2ECC71] text-white hover:bg-[#26B35F] text-lg px-8 py-6">
+              <Button 
+                className="bg-[#2ECC71] text-white hover:bg-[#26B35F] text-lg px-8 py-6"
+                onClick={() => window.location.href = getLoginUrl()}
+              >
                 Create Business Account
               </Button>
             </div>
@@ -237,7 +272,10 @@ export default function Home() {
             Join thousands of users and businesses already using Afa'a Pay to secure their transactions and build trust.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-[#2ECC71] text-white hover:bg-[#26B35F] text-lg px-8 py-6">
+            <Button 
+              className="bg-[#2ECC71] text-white hover:bg-[#26B35F] text-lg px-8 py-6"
+              onClick={() => window.location.href = getLoginUrl()}
+            >
               Get Started Now
             </Button>
             <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#001F3F] text-lg px-8 py-6">
