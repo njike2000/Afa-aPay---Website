@@ -5,9 +5,12 @@ import {
   Link2, QrCode, BarChart3, Globe, Smartphone, CreditCard, Star, TrendingUp
 } from "lucide-react";
 import { getLoginUrl } from "@/const";
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function Home() {
   const { user, isAuthenticated, logout } = useAuth();
+  const { t } = useTranslation();
 
   const products = [
     {
@@ -162,6 +165,7 @@ export default function Home() {
             <a href="/blog" className="text-gray-700 hover:text-[#2ECC71] transition">Blog</a>
           </nav>
           <div className="flex items-center gap-4">
+            <LanguageSwitcher />
             {isAuthenticated ? (
               <>
                 <span className="text-gray-700">Welcome, {user?.name}</span>

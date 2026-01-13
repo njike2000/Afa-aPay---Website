@@ -2,9 +2,12 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Calendar, User, Tag } from "lucide-react";
 import { getLoginUrl } from "@/const";
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function Blog() {
   const { user, isAuthenticated, logout } = useAuth();
+  const { t } = useTranslation();
 
   const articles = [
     {
@@ -86,6 +89,7 @@ export default function Blog() {
             <a href="/blog" className="text-gray-700 hover:text-[#2ECC71] transition font-bold text-[#2ECC71]">Blog</a>
           </nav>
           <div className="flex items-center gap-4">
+            <LanguageSwitcher />
             {isAuthenticated ? (
               <>
                 <span className="text-gray-700">Welcome, {user?.name}</span>

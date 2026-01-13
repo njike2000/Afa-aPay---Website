@@ -3,9 +3,12 @@ import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Copy, QrCode, Check } from "lucide-react";
 import { getLoginUrl } from "@/const";
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function Demo() {
   const { user, isAuthenticated, logout } = useAuth();
+  const { t } = useTranslation();
   const [paymentLink, setPaymentLink] = useState('');
   const [showQR, setShowQR] = useState(false);
   const [copied, setCopied] = useState(false);
@@ -43,6 +46,7 @@ export default function Demo() {
             <a href="/demo" className="text-gray-700 hover:text-[#2ECC71] transition font-bold text-[#2ECC71]">Demo</a>
           </nav>
           <div className="flex items-center gap-4">
+            <LanguageSwitcher />
             {isAuthenticated ? (
               <>
                 <span className="text-gray-700">Welcome, {user?.name}</span>

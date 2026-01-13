@@ -1,0 +1,175 @@
+{
+  "common": {
+    "appName": "Afa'a Pay",
+    "tagline": "Transact with Confidence",
+    "signIn": "Sign In",
+    "getStarted": "Get Started",
+    "signOut": "Sign Out",
+    "home": "Home",
+    "products": "Products",
+    "howItWorks": "How It Works",
+    "useCases": "Use Cases",
+    "pricing": "Pricing",
+    "demo": "Demo",
+    "blog": "Blog",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "compliance": "Compliance"
+  },
+  "home": {
+    "hero": {
+      "title": "Secure Digital Payments for Africa",
+      "subtitle": "Transact with confidence. Every payment is protected by escrow, digital contracts, and fair mediation.",
+      "cta": "Start Free Trial"
+    },
+    "problem": {
+      "title": "The Problem",
+      "subtitle": "Payment fraud, non-payment, and disputes cost African businesses billions annually",
+      "points": [
+        "Payment fraud and chargebacks",
+        "Non-payment and disputes",
+        "Lack of legal protection",
+        "No reputation system",
+        "Limited payment options"
+      ]
+    },
+    "solution": {
+      "title": "Our Solution",
+      "subtitle": "Afa'a Pay's trust infrastructure solves every payment challenge",
+      "points": [
+        "Escrow protection for all transactions",
+        "Digital contracts for every payment",
+        "Fair mediation in 24-72 hours",
+        "Trust score reputation system",
+        "6+ payment methods aggregated"
+      ]
+    },
+    "products": {
+      "title": "Our Products",
+      "subtitle": "Complete payment solutions for every business type"
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "subtitle": "Simple 4-step process to secure payments",
+      "steps": [
+        {
+          "title": "Create Account",
+          "description": "Sign up in seconds with your email"
+        },
+        {
+          "title": "Generate Payment Link",
+          "description": "Create unique payment links in seconds"
+        },
+        {
+          "title": "Share & Collect",
+          "description": "Share via SMS, email, or QR code"
+        },
+        {
+          "title": "Get Paid Securely",
+          "description": "Receive payments protected by escrow"
+        }
+      ]
+    },
+    "useCases": {
+      "title": "Use Cases by Segment",
+      "subtitle": "Tailored solutions for every business type"
+    },
+    "testimonials": {
+      "title": "What Our Users Say",
+      "subtitle": "Real stories from businesses using Afa'a Pay"
+    },
+    "pricing": {
+      "title": "Simple, Transparent Pricing",
+      "subtitle": "No hidden fees. Pay only for what you use.",
+      "starter": "Starter",
+      "professional": "Professional",
+      "enterprise": "Enterprise"
+    },
+    "cta": {
+      "title": "Ready to Transform Your Payments?",
+      "subtitle": "Join thousands of businesses building trust in their transactions.",
+      "button": "Start Free Trial Now"
+    }
+  },
+  "products": {
+    "paymentLink": {
+      "name": "Payment Link",
+      "shortDescription": "Generate unique payment links that accept all payment methods",
+      "hero": {
+        "title": "Payment Link: One Link, All Payment Methods",
+        "subtitle": "Collect payments from anyone, anywhere, using their preferred payment method. No technical setup required."
+      }
+    },
+    "pos": {
+      "name": "POS System",
+      "shortDescription": "Accept in-store and mobile payments with built-in escrow protection",
+      "hero": {
+        "title": "POS System: Mobile Payments Made Simple",
+        "subtitle": "Turn your smartphone into a complete payment and inventory management system."
+      }
+    },
+    "paymentFacilitator": {
+      "name": "Payment Facilitator",
+      "shortDescription": "Aggregate all payment methods in one unified platform",
+      "hero": {
+        "title": "Payment Facilitator: Your Complete Payment Infrastructure",
+        "subtitle": "Aggregate all payment methods, manage settlements, and scale your payment operations."
+      }
+    },
+    "digitalContracts": {
+      "name": "Digital Contracts",
+      "shortDescription": "Auto-generated, legally binding contracts for every transaction",
+      "hero": {
+        "title": "Digital Contracts: Legal Protection for Every Transaction",
+        "subtitle": "Automatically generate legally binding contracts with e-signatures for every transaction."
+      }
+    },
+    "mediation": {
+      "name": "Mediation Platform",
+      "shortDescription": "Fair, transparent dispute resolution in 24-72 hours",
+      "hero": {
+        "title": "Mediation Platform: Fair Resolution for Every Dispute",
+        "subtitle": "Resolve disputes fairly and transparently with 95% success rate in 24-72 hours."
+      }
+    },
+    "trustScore": {
+      "name": "Trust Score",
+      "shortDescription": "Build verifiable reputation that unlocks opportunities",
+      "hero": {
+        "title": "Trust Score: Your Digital Reputation",
+        "subtitle": "Build a verifiable reputation that unlocks better credit terms and business opportunities."
+      }
+    }
+  },
+  "demo": {
+    "title": "Try Payment Link",
+    "subtitle": "Generate a sample payment link in seconds and see how easy it is to collect payments.",
+    "form": {
+      "productName": "Product Name",
+      "amount": "Amount",
+      "currency": "Currency",
+      "description": "Description",
+      "generate": "Generate Payment Link"
+    },
+    "preview": {
+      "title": "Your Payment Link",
+      "paymentLink": "Payment Link",
+      "qrCode": "QR Code",
+      "acceptedMethods": "Accepted Payment Methods",
+      "summary": "Payment Summary",
+      "product": "Product",
+      "status": "Status",
+      "readyToShare": "Ready to Share"
+    }
+  },
+  "blog": {
+    "title": "Resources & Insights",
+    "subtitle": "Learn how to build trust, reduce fraud, and grow your business with Afa'a Pay.",
+    "readMore": "Read More",
+    "subscribe": "Subscribe",
+    "newsletter": "Stay Updated",
+    "newsletterSubtitle": "Get the latest insights on payment security, fraud prevention, and business growth delivered to your inbox."
+  }
+}

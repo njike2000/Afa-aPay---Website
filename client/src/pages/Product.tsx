@@ -4,11 +4,14 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { getLoginUrl } from "@/const";
 import { products, type ProductKey } from "@/data/products";
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export default function ProductPage() {
   const params = useParams<{ slug: string }>();
   const slug = params?.slug;
   const { user, isAuthenticated, logout } = useAuth();
+  const { t } = useTranslation();
   
   const productKey = Object.keys(products).find(
     key => products[key as ProductKey].slug === slug
@@ -43,6 +46,7 @@ export default function ProductPage() {
             <span className="font-bold text-[#001F3F]">Afa'a Pay</span>
           </div>
           <div className="flex items-center gap-4">
+            <LanguageSwitcher />
             {isAuthenticated ? (
               <>
                 <span className="text-gray-700">Welcome, {user?.name}</span>

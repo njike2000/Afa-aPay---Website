@@ -1,0 +1,175 @@
+{
+  "common": {
+    "appName": "Afa'a Pay",
+    "tagline": "Transactionnez en Confiance",
+    "signIn": "Se Connecter",
+    "getStarted": "Commencer",
+    "signOut": "Se Déconnecter",
+    "home": "Accueil",
+    "products": "Produits",
+    "howItWorks": "Comment Ça Marche",
+    "useCases": "Cas d'Usage",
+    "pricing": "Tarification",
+    "demo": "Démo",
+    "blog": "Blog",
+    "about": "À Propos",
+    "contact": "Contact",
+    "privacy": "Confidentialité",
+    "terms": "Conditions",
+    "compliance": "Conformité"
+  },
+  "home": {
+    "hero": {
+      "title": "Paiements Numériques Sécurisés pour l'Afrique",
+      "subtitle": "Transactionnez en confiance. Chaque paiement est protégé par séquestre, contrats numériques et médiation équitable.",
+      "cta": "Commencer l'Essai Gratuit"
+    },
+    "problem": {
+      "title": "Le Problème",
+      "subtitle": "La fraude aux paiements, les non-paiements et les litiges coûtent des milliards aux entreprises africaines chaque année",
+      "points": [
+        "Fraude aux paiements et rétrofacturations",
+        "Non-paiement et litiges",
+        "Manque de protection juridique",
+        "Pas de système de réputation",
+        "Options de paiement limitées"
+      ]
+    },
+    "solution": {
+      "title": "Notre Solution",
+      "subtitle": "L'infrastructure de confiance d'Afa'a Pay résout tous les défis de paiement",
+      "points": [
+        "Protection par séquestre pour toutes les transactions",
+        "Contrats numériques pour chaque paiement",
+        "Médiation équitable en 24-72 heures",
+        "Système de réputation Trust Score",
+        "6+ méthodes de paiement agrégées"
+      ]
+    },
+    "products": {
+      "title": "Nos Produits",
+      "subtitle": "Solutions de paiement complètes pour chaque type d'entreprise"
+    },
+    "howItWorks": {
+      "title": "Comment Ça Marche",
+      "subtitle": "Processus simple en 4 étapes pour des paiements sécurisés",
+      "steps": [
+        {
+          "title": "Créer un Compte",
+          "description": "Inscrivez-vous en quelques secondes avec votre email"
+        },
+        {
+          "title": "Générer un Lien de Paiement",
+          "description": "Créez des liens de paiement uniques en quelques secondes"
+        },
+        {
+          "title": "Partager et Collecter",
+          "description": "Partagez par SMS, email ou code QR"
+        },
+        {
+          "title": "Recevoir des Paiements Sécurisés",
+          "description": "Recevez des paiements protégés par séquestre"
+        }
+      ]
+    },
+    "useCases": {
+      "title": "Cas d'Usage par Segment",
+      "subtitle": "Solutions adaptées pour chaque type d'entreprise"
+    },
+    "testimonials": {
+      "title": "Ce que Disent Nos Utilisateurs",
+      "subtitle": "Histoires réelles d'entreprises utilisant Afa'a Pay"
+    },
+    "pricing": {
+      "title": "Tarification Simple et Transparente",
+      "subtitle": "Pas de frais cachés. Payez uniquement ce que vous utilisez.",
+      "starter": "Démarrage",
+      "professional": "Professionnel",
+      "enterprise": "Entreprise"
+    },
+    "cta": {
+      "title": "Prêt à Transformer Vos Paiements?",
+      "subtitle": "Rejoignez des milliers d'entreprises qui construisent la confiance dans leurs transactions.",
+      "button": "Commencer l'Essai Gratuit Maintenant"
+    }
+  },
+  "products": {
+    "paymentLink": {
+      "name": "Lien de Paiement",
+      "shortDescription": "Générez des liens de paiement uniques qui acceptent toutes les méthodes de paiement",
+      "hero": {
+        "title": "Lien de Paiement: Un Lien, Toutes les Méthodes de Paiement",
+        "subtitle": "Collectez des paiements de n'importe qui, n'importe où, en utilisant leur méthode de paiement préférée. Aucune configuration technique requise."
+      }
+    },
+    "pos": {
+      "name": "Système POS",
+      "shortDescription": "Acceptez les paiements en magasin et mobiles avec protection par séquestre intégrée",
+      "hero": {
+        "title": "Système POS: Les Paiements Mobiles Simplifiés",
+        "subtitle": "Transformez votre smartphone en un système complet de gestion des paiements et des stocks."
+      }
+    },
+    "paymentFacilitator": {
+      "name": "Facilitateur de Paiement",
+      "shortDescription": "Agrégez toutes les méthodes de paiement dans une seule plateforme unifiée",
+      "hero": {
+        "title": "Facilitateur de Paiement: Votre Infrastructure de Paiement Complète",
+        "subtitle": "Agrégez toutes les méthodes de paiement, gérez les règlements et développez vos opérations de paiement."
+      }
+    },
+    "digitalContracts": {
+      "name": "Contrats Numériques",
+      "shortDescription": "Contrats auto-générés et juridiquement contraignants pour chaque transaction",
+      "hero": {
+        "title": "Contrats Numériques: Protection Juridique pour Chaque Transaction",
+        "subtitle": "Générez automatiquement des contrats juridiquement contraignants avec signatures électroniques pour chaque transaction."
+      }
+    },
+    "mediation": {
+      "name": "Plateforme de Médiation",
+      "shortDescription": "Résolution équitable et transparente des litiges en 24-72 heures",
+      "hero": {
+        "title": "Plateforme de Médiation: Résolution Équitable de Chaque Litige",
+        "subtitle": "Résolvez les litiges équitablement et de manière transparente avec un taux de réussite de 95% en 24-72 heures."
+      }
+    },
+    "trustScore": {
+      "name": "Score de Confiance",
+      "shortDescription": "Construisez une réputation vérifiable qui déverrouille des opportunités",
+      "hero": {
+        "title": "Score de Confiance: Votre Réputation Numérique",
+        "subtitle": "Construisez une réputation vérifiable qui déverrouille de meilleures conditions de crédit et des opportunités commerciales."
+      }
+    }
+  },
+  "demo": {
+    "title": "Essayez le Lien de Paiement",
+    "subtitle": "Générez un exemple de lien de paiement en quelques secondes et voyez comment il est facile de collecter des paiements.",
+    "form": {
+      "productName": "Nom du Produit",
+      "amount": "Montant",
+      "currency": "Devise",
+      "description": "Description",
+      "generate": "Générer le Lien de Paiement"
+    },
+    "preview": {
+      "title": "Votre Lien de Paiement",
+      "paymentLink": "Lien de Paiement",
+      "qrCode": "Code QR",
+      "acceptedMethods": "Méthodes de Paiement Acceptées",
+      "summary": "Résumé du Paiement",
+      "product": "Produit",
+      "status": "Statut",
+      "readyToShare": "Prêt à Partager"
+    }
+  },
+  "blog": {
+    "title": "Ressources et Perspectives",
+    "subtitle": "Apprenez comment construire la confiance, réduire la fraude et développer votre entreprise avec Afa'a Pay.",
+    "readMore": "Lire la Suite",
+    "subscribe": "S'Abonner",
+    "newsletter": "Restez Informé",
+    "newsletterSubtitle": "Recevez les dernières perspectives sur la sécurité des paiements, la prévention de la fraude et la croissance commerciale dans votre boîte de réception."
+  }
+}
