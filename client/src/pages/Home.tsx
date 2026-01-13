@@ -151,7 +151,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <img src="/logo.png" alt="Afa'a Pay" className="h-10" />
-            <span className="font-bold text-[#001F3F]">Afa'a Pay</span>
+        
           </div>
           <nav className="hidden md:flex items-center gap-8">
             <a href="#products" className="text-gray-700 hover:text-[#2ECC71] transition">Products</a>
