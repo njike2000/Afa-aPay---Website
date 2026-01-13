@@ -1,10 +1,17 @@
+import { useState } from 'react';
 import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, Lock, FileText, Users, ArrowRight, Shield, Clock, Zap } from "lucide-react";
 import { getLoginUrl } from "@/const";
+import OrganizationSelector from "@/components/OrganizationSelector";
+import PaymentFacilitator from "@/components/PaymentFacilitator";
+import { segmentContent } from "@/data/segmentContent";
 
 export default function Home() {
   const { user, isAuthenticated, logout } = useAuth();
+  const [selectedSegment, setSelectedSegment] = useState('individuals');
+  
+  const segment = segmentContent[selectedSegment as keyof typeof segmentContent];
 
   return (
     <div className="min-h-screen bg-white" style={{ fontFamily: "'Poppins', sans-serif" }}>
@@ -16,8 +23,8 @@ export default function Home() {
           </div>
           <nav className="hidden md:flex items-center gap-8">
             <a href="#features" className="text-gray-700 hover:text-[#2ECC71] transition">Features</a>
-            <a href="#personal" className="text-gray-700 hover:text-[#2ECC71] transition">Personal</a>
-            <a href="#business" className="text-gray-700 hover:text-[#2ECC71] transition">Business</a>
+            <a href="#selector" className="text-gray-700 hover:text-[#2ECC71] transition">For Who</a>
+            <a href="#payment" className="text-gray-700 hover:text-[#2ECC71] transition">Payment Link</a>
           </nav>
           <div className="flex items-center gap-4">
             {isAuthenticated ? (
@@ -166,100 +173,119 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Personal Account Section */}
-      <section id="personal" className="py-20 md:py-32 bg-gray-50">
+      {/* Organization Selector Section */}
+      <section id="selector" className="py-20 md:py-32 bg-gray-50 border-b-2 border-[#2ECC71]">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] mb-6">For Individuals & C2C</h2>
-              <p className="text-xl text-gray-700 mb-8">
-                Send money, buy and sell with confidence. Afa'a Pay protects you with escrow and dispute resolution.
-              </p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start gap-4">
-                  <Shield className="text-[#2ECC71] flex-shrink-0 mt-1" size={24} />
-                  <div>
-                    <h4 className="font-bold text-[#001F3F] mb-1">Protected Transactions</h4>
-                    <p className="text-gray-600">Every payment is secured with escrow until delivery is confirmed</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <Clock className="text-[#2ECC71] flex-shrink-0 mt-1" size={24} />
-                  <div>
-                    <h4 className="font-bold text-[#001F3F] mb-1">Fast Dispute Resolution</h4>
-                    <p className="text-gray-600">Get fair, neutral resolution in 24-72 hours if something goes wrong</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <Zap className="text-[#2ECC71] flex-shrink-0 mt-1" size={24} />
-                  <div>
-                    <h4 className="font-bold text-[#001F3F] mb-1">Instant Transfers</h4>
-                    <p className="text-gray-600">Send money to other Afa'a Pay users instantly with zero fees</p>
-                  </div>
-                </li>
-              </ul>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] mb-4">Who Are You?</h2>
+            <p className="text-xl text-gray-600">
+              Select your organization type to see features tailored just for you
+            </p>
+          </div>
+          <OrganizationSelector 
+            selectedType={selectedSegment} 
+            onTypeChange={setSelectedSegment}
+          />
+        </div>
+      </section>
+
+      {/* Segment-Specific Hero Section */}
+      <section className="py-20 md:py-32 bg-gradient-to-br from-[#001F3F] to-[#003D5C] text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+              {segment.hero.title}
+            </h2>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+              {segment.hero.subtitle}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 className="bg-[#2ECC71] text-white hover:bg-[#26B35F] text-lg px-8 py-6"
                 onClick={() => window.location.href = getLoginUrl()}
               >
-                Create Personal Account
+                {segment.hero.cta} <ArrowRight className="ml-2" />
               </Button>
-            </div>
-            <div className="bg-gradient-to-br from-[#2ECC71] to-[#1F9A4D] rounded-lg p-8 text-white min-h-96 flex items-center justify-center">
-              <div className="text-center">
-                <Users size={64} className="mx-auto mb-4 opacity-80" />
-                <p className="text-lg">Secure, transparent, fair transactions for everyone</p>
-              </div>
+              <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#001F3F] text-lg px-8 py-6">
+                Learn More
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Business Account Section */}
-      <section id="business" className="py-20 md:py-32 bg-white">
+      {/* Segment-Specific Trust Pillars */}
+      <section className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="bg-gradient-to-br from-[#001F3F] to-[#003D5C] rounded-lg p-8 text-white min-h-96 flex items-center justify-center">
-              <div className="text-center">
-                <Users size={64} className="mx-auto mb-4 opacity-80" />
-                <p className="text-lg">Digitize your supply chain and reduce credit risk by 90%</p>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] mb-4">
+              Why {segment.hero.title.split('.')[0].trim()} Trust Afa'a Pay
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Tailored trust infrastructure designed for your specific needs
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {segment.trustPillars.map((pillar, index) => (
+              <div key={index} className="bg-white border border-gray-200 p-8 rounded-lg hover:shadow-lg transition">
+                <div className="w-16 h-16 bg-[#2ECC71] rounded-full flex items-center justify-center mb-6">
+                  <span className="text-white font-bold text-2xl">{index + 1}</span>
+                </div>
+                <h3 className="text-2xl font-bold text-[#001F3F] mb-4">{pillar.title}</h3>
+                <p className="text-gray-700">{pillar.description}</p>
               </div>
-            </div>
-            <div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] mb-6">For SMEs & Businesses</h2>
-              <p className="text-xl text-gray-700 mb-8">
-                Secure your supply chain, reduce credit loss, and build a verifiable reputation for growth.
-              </p>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-start gap-4">
-                  <Shield className="text-[#2ECC71] flex-shrink-0 mt-1" size={24} />
-                  <div>
-                    <h4 className="font-bold text-[#001F3F] mb-1">90% Credit Loss Reduction</h4>
-                    <p className="text-gray-600">Secure every transaction with digital contracts and escrow</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <Clock className="text-[#2ECC71] flex-shrink-0 mt-1" size={24} />
-                  <div>
-                    <h4 className="font-bold text-[#001F3F] mb-1">Automated Reconciliation</h4>
-                    <p className="text-gray-600">Zero-error accounting and instant fund availability</p>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <Zap className="text-[#2ECC71] flex-shrink-0 mt-1" size={24} />
-                  <div>
-                    <h4 className="font-bold text-[#001F3F] mb-1">Build Your Trust Score</h4>
-                    <p className="text-gray-600">Verifiable reputation that unlocks better credit terms</p>
-                  </div>
-                </li>
-              </ul>
-              <Button 
-                className="bg-[#2ECC71] text-white hover:bg-[#26B35F] text-lg px-8 py-6"
-                onClick={() => window.location.href = getLoginUrl()}
-              >
-                Create Business Account
-              </Button>
-            </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Segment-Specific Features */}
+      <section className="py-20 md:py-32 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] mb-4">
+              Features Built for {segment.hero.title.split('.')[0].trim()}
+            </h2>
+            <p className="text-xl text-gray-600">
+              Everything you need to transact with confidence
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {segment.features.map((feature, index) => (
+              <div key={index} className="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition">
+                <div className="flex items-start gap-3">
+                  <CheckCircle2 className="text-[#2ECC71] flex-shrink-0 mt-1" size={24} />
+                  <span className="text-gray-700">{feature}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Payment Facilitator */}
+      <section id="payment">
+        <PaymentFacilitator />
+      </section>
+
+      {/* Industries Section */}
+      <section className="py-20 md:py-32 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] mb-4">Industries We Serve</h2>
+            <p className="text-xl text-gray-600">
+              Afa'a Pay is trusted by {segment.hero.title.split('.')[0].toLowerCase()} across these industries
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {segment.industries.map((industry, index) => (
+              <div key={index} className="bg-white rounded-lg p-8 border border-gray-200 hover:shadow-lg transition text-center">
+                <h3 className="text-lg font-bold text-[#001F3F]">{industry}</h3>
+              </div>
+            ))}
           </div>
         </div>
       </section>
