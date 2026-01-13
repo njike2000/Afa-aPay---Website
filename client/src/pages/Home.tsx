@@ -15,39 +15,45 @@ export default function Home() {
   const products = [
     {
       icon: Link2,
-      title: "Payment Link",
-      description: "Generate unique payment links that accept all payment methods. Share via SMS, email, or QR code.",
+      title: t("products.paymentLink.name"),
+      description: t("products.paymentLink.shortDescription"),
       features: ["One link, all methods", "Instant setup", "QR code generation", "Real-time analytics"],
+      slug: "payment-link",
     },
     {
       icon: Smartphone,
-      title: "POS System",
-      description: "Accept in-store and mobile payments with built-in escrow protection and digital receipts.",
+      title: t("products.pos.name"),
+      description: t("products.pos.shortDescription"),
       features: ["Offline capability", "Digital receipts", "Inventory sync", "Staff management"],
+      slug: "pos",
     },
     {
       icon: Globe,
-      title: "Payment Facilitator",
-      description: "Aggregate all payment methods in one platform. Support MTN Money, Orange Money, PayPal, Bank Transfer, Card, and Crypto.",
+      title: t("products.paymentFacilitator.name"),
+      description: t("products.paymentFacilitator.shortDescription"),
       features: ["6 payment methods", "Unified dashboard", "Instant settlement", "Multi-currency"],
+      slug: "payment-facilitator",
     },
     {
       icon: FileText,
-      title: "Digital Contracts",
-      description: "Every transaction automatically generates legally binding digital contracts with e-signatures.",
+      title: t("products.digitalContracts.name"),
+      description: t("products.digitalContracts.shortDescription"),
       features: ["Auto-generated", "E-signature ready", "Immutable records", "Audit trails"],
+      slug: "digital-contracts",
     },
     {
       icon: Users,
-      title: "Mediation Platform",
-      description: "Fair, transparent dispute resolution. 95% resolution rate in 24-72 hours with human oversight.",
+      title: t("products.mediation.name"),
+      description: t("products.mediation.shortDescription"),
       features: ["Fair arbitration", "24-72hr resolution", "95% success rate", "Neutral mediators"],
+      slug: "mediation",
     },
     {
       icon: TrendingUp,
-      title: "Trust Score",
-      description: "Build a verifiable reputation that unlocks better credit terms and business opportunities.",
+      title: t("products.trustScore.name"),
+      description: t("products.trustScore.shortDescription"),
       features: ["Reputation tracking", "Credit history", "Unlock benefits", "Business growth"],
+      slug: "trust-score",
     },
   ];
 
@@ -154,15 +160,15 @@ export default function Home() {
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <img src="/logo.png" alt="Afa'a Pay" className="h-10" />
-        
+            <span className="font-bold text-[#001F3F]">{t("common.appName")}</span>
           </div>
           <nav className="hidden md:flex items-center gap-8">
-            <a href="#products" className="text-gray-700 hover:text-[#2ECC71] transition">Products</a>
-            <a href="#how-it-works" className="text-gray-700 hover:text-[#2ECC71] transition">How It Works</a>
-            <a href="#use-cases" className="text-gray-700 hover:text-[#2ECC71] transition">Use Cases</a>
-            <a href="#pricing" className="text-gray-700 hover:text-[#2ECC71] transition">Pricing</a>
-            <a href="/demo" className="text-gray-700 hover:text-[#2ECC71] transition">Demo</a>
-            <a href="/blog" className="text-gray-700 hover:text-[#2ECC71] transition">Blog</a>
+            <a href="#products" className="text-gray-700 hover:text-[#2ECC71] transition">{t("common.products")}</a>
+            <a href="#how-it-works" className="text-gray-700 hover:text-[#2ECC71] transition">{t("common.howItWorks")}</a>
+            <a href="#use-cases" className="text-gray-700 hover:text-[#2ECC71] transition">{t("common.useCases")}</a>
+            <a href="#pricing" className="text-gray-700 hover:text-[#2ECC71] transition">{t("common.pricing")}</a>
+            <a href="/demo" className="text-gray-700 hover:text-[#2ECC71] transition">{t("common.demo")}</a>
+            <a href="/blog" className="text-gray-700 hover:text-[#2ECC71] transition">{t("common.blog")}</a>
           </nav>
           <div className="flex items-center gap-4">
             <LanguageSwitcher />
@@ -174,7 +180,7 @@ export default function Home() {
                   className="border-[#2ECC71] text-[#2ECC71] hover:bg-[#2ECC71] hover:text-white"
                   onClick={logout}
                 >
-                  Sign Out
+                  {t("common.signOut")}
                 </Button>
               </>
             ) : (
@@ -184,13 +190,13 @@ export default function Home() {
                   className="border-[#2ECC71] text-[#2ECC71] hover:bg-[#2ECC71] hover:text-white"
                   onClick={() => window.location.href = getLoginUrl()}
                 >
-                  Sign In
+                  {t("common.signIn")}
                 </Button>
                 <Button 
                   className="bg-[#2ECC71] text-white hover:bg-[#26B35F]"
                   onClick={() => window.location.href = getLoginUrl()}
                 >
-                  Get Started
+                  {t("common.getStarted")}
                 </Button>
               </>
             )}
@@ -203,17 +209,17 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              Secure Digital Payments for Africa
+              {t("home.hero.title")}
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-              Stop worrying about payment fraud, non-payment, and disputes. Afa'a Pay is the trust infrastructure that protects every transaction with escrow, digital contracts, and fair mediation.
+              {t("home.hero.subtitle")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button 
                 className="bg-[#2ECC71] text-white hover:bg-[#26B35F] text-lg px-8 py-6"
                 onClick={() => window.location.href = getLoginUrl()}
               >
-                Start Free Trial <ArrowRight className="ml-2" />
+                {t("home.hero.cta")} <ArrowRight className="ml-2" />
               </Button>
               <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#001F3F] text-lg px-8 py-6">
                 Watch Demo
@@ -228,52 +234,52 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#001F3F] mb-6">The Problem</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#001F3F] mb-6">{t("home.problem.title")}</h2>
               <ul className="space-y-4 text-lg text-gray-700">
                 <li className="flex items-start gap-3">
                   <span className="text-red-500 font-bold">✕</span>
-                  <span>Payment fraud and chargebacks</span>
+                  <span>{t("home.problem.points.0")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-red-500 font-bold">✕</span>
-                  <span>Non-payment and delivery disputes</span>
+                  <span>{t("home.problem.points.1")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-red-500 font-bold">✕</span>
-                  <span>Slow dispute resolution</span>
+                  <span>{t("home.problem.points.2")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-red-500 font-bold">✕</span>
-                  <span>No verifiable transaction records</span>
+                  <span>{t("home.problem.points.3")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-red-500 font-bold">✕</span>
-                  <span>Difficulty building business reputation</span>
+                  <span>{t("home.problem.points.4")}</span>
                 </li>
               </ul>
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#001F3F] mb-6">The Solution</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-[#001F3F] mb-6">{t("home.solution.title")}</h2>
               <ul className="space-y-4 text-lg text-gray-700">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 size={24} className="text-[#2ECC71] flex-shrink-0" />
-                  <span><strong>Smart Escrow:</strong> Funds held until both parties confirm</span>
+                  <span>{t("home.solution.points.0")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 size={24} className="text-[#2ECC71] flex-shrink-0" />
-                  <span><strong>Digital Contracts:</strong> Auto-generated, legally binding</span>
+                  <span>{t("home.solution.points.1")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 size={24} className="text-[#2ECC71] flex-shrink-0" />
-                  <span><strong>Fair Mediation:</strong> 95% resolution rate in 24-72 hours</span>
+                  <span>{t("home.solution.points.2")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 size={24} className="text-[#2ECC71] flex-shrink-0" />
-                  <span><strong>Immutable Records:</strong> Complete transaction history</span>
+                  <span>{t("home.solution.points.3")}</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 size={24} className="text-[#2ECC71] flex-shrink-0" />
-                  <span><strong>Trust Score:</strong> Build verifiable reputation</span>
+                  <span>{t("home.solution.points.4")}</span>
                 </li>
               </ul>
             </div>
@@ -285,29 +291,31 @@ export default function Home() {
       <section id="products" className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] mb-4">Our Products</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Complete payment infrastructure with trust built-in
-            </p>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] mb-4">{t("home.products.title")}</h2>
+            <p className="text-xl text-gray-600">{t("home.products.subtitle")}</p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((product, index) => {
               const Icon = product.icon;
               return (
-                <div key={index} className="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg transition">
-                  <Icon className="w-12 h-12 text-[#2ECC71] mb-4" />
+                <a
+                  key={index}
+                  href={`/product/${product.slug}`}
+                  className="bg-white border border-gray-200 rounded-lg p-8 hover:shadow-lg transition cursor-pointer"
+                >
+                  <Icon size={48} className="text-[#2ECC71] mb-4" />
                   <h3 className="text-2xl font-bold text-[#001F3F] mb-3">{product.title}</h3>
-                  <p className="text-gray-700 mb-6">{product.description}</p>
-                  <ul className="space-y-2">
+                  <p className="text-gray-600 mb-6">{product.description}</p>
+                  <div className="space-y-2">
                     {product.features.map((feature, i) => (
-                      <li key={i} className="flex items-center gap-2 text-gray-600">
-                        <span className="w-1.5 h-1.5 bg-[#2ECC71] rounded-full"></span>
+                      <div key={i} className="flex items-center gap-2 text-sm text-gray-700">
+                        <CheckCircle2 size={16} className="text-[#2ECC71]" />
                         {feature}
-                      </li>
+                      </div>
                     ))}
-                  </ul>
-                </div>
+                  </div>
+                </a>
               );
             })}
           </div>
@@ -318,23 +326,18 @@ export default function Home() {
       <section id="how-it-works" className="py-20 md:py-32 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] mb-4">How It Works</h2>
-            <p className="text-xl text-gray-600">Simple, secure, and transparent</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] mb-4">{t("home.howItWorks.title")}</h2>
+            <p className="text-xl text-gray-600">{t("home.howItWorks.subtitle")}</p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-8">
-            {[
-              { step: 1, title: "Create Account", desc: "Sign up in minutes with your business details" },
-              { step: 2, title: "Generate Payment Link", desc: "Create unique links for each transaction" },
-              { step: 3, title: "Customer Pays", desc: "They choose their preferred payment method" },
-              { step: 4, title: "Get Paid", desc: "Funds released upon delivery confirmation" },
-            ].map((item) => (
-              <div key={item.step} className="text-center">
-                <div className="w-16 h-16 bg-[#2ECC71] rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold text-2xl">{item.step}</span>
+            {[1, 2, 3, 4].map((step) => (
+              <div key={step} className="text-center">
+                <div className="w-16 h-16 bg-[#2ECC71] text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                  {step}
                 </div>
-                <h3 className="text-xl font-bold text-[#001F3F] mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
+                <h3 className="text-xl font-bold text-[#001F3F] mb-2">{t(`home.howItWorks.steps.${step - 1}.title`)}</h3>
+                <p className="text-gray-600">{t(`home.howItWorks.steps.${step - 1}.description`)}</p>
               </div>
             ))}
           </div>
@@ -345,28 +348,28 @@ export default function Home() {
       <section id="use-cases" className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] mb-4">Built for Every Business Type</h2>
-            <p className="text-xl text-gray-600">Whether you're an individual, SME, enterprise, or financial institution</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] mb-4">{t("home.useCases.title")}</h2>
+            <p className="text-xl text-gray-600">{t("home.useCases.subtitle")}</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
             {useCases.map((useCase, index) => {
               const Icon = useCase.icon;
               return (
-                <div key={index} className="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-lg p-8">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Icon className="w-8 h-8 text-[#2ECC71]" />
+                <div key={index} className="bg-gray-50 rounded-lg p-8 border border-gray-200">
+                  <div className="flex items-center gap-4 mb-4">
+                    <Icon size={40} className="text-[#2ECC71]" />
                     <h3 className="text-2xl font-bold text-[#001F3F]">{useCase.segment}</h3>
                   </div>
-                  <p className="text-gray-700 mb-6">{useCase.description}</p>
-                  <ul className="space-y-2">
+                  <p className="text-gray-600 mb-6">{useCase.description}</p>
+                  <div className="space-y-2">
                     {useCase.benefits.map((benefit, i) => (
-                      <li key={i} className="flex items-center gap-2 text-gray-700">
-                        <CheckCircle2 size={18} className="text-[#2ECC71] flex-shrink-0" />
+                      <div key={i} className="flex items-center gap-2 text-sm text-gray-700">
+                        <CheckCircle2 size={16} className="text-[#2ECC71]" />
                         {benefit}
-                      </li>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
               );
             })}
@@ -378,8 +381,8 @@ export default function Home() {
       <section className="py-20 md:py-32 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] mb-4">Trusted by Thousands</h2>
-            <p className="text-xl text-gray-600">See what our users have to say</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] mb-4">{t("home.testimonials.title")}</h2>
+            <p className="text-xl text-gray-600">{t("home.testimonials.subtitle")}</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -387,13 +390,13 @@ export default function Home() {
               <div key={index} className="bg-white rounded-lg p-8 border border-gray-200">
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} size={20} className="fill-yellow-400 text-yellow-400" />
+                    <Star key={i} size={20} className="text-yellow-400 fill-yellow-400" />
                   ))}
                 </div>
                 <p className="text-gray-700 mb-6 italic">"{testimonial.text}"</p>
                 <div>
                   <p className="font-bold text-[#001F3F]">{testimonial.name}</p>
-                  <p className="text-gray-600 text-sm">{testimonial.role}</p>
+                  <p className="text-sm text-gray-600">{testimonial.role}</p>
                 </div>
               </div>
             ))}
@@ -405,69 +408,66 @@ export default function Home() {
       <section id="pricing" className="py-20 md:py-32 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] mb-4">Simple, Transparent Pricing</h2>
-            <p className="text-xl text-gray-600">Choose the plan that fits your needs</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#001F3F] mb-4">{t("home.pricing.title")}</h2>
+            <p className="text-xl text-gray-600">{t("home.pricing.subtitle")}</p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {pricingPlans.map((plan, index) => (
               <div 
                 key={index} 
-                className={`rounded-lg p-8 border-2 transition-all ${
+                className={`rounded-lg p-8 ${
                   plan.highlighted 
-                    ? 'border-[#2ECC71] bg-green-50 md:scale-105' 
-                    : 'border-gray-200 bg-white'
+                    ? 'bg-[#001F3F] text-white border-2 border-[#2ECC71] transform scale-105' 
+                    : 'bg-white border border-gray-200'
                 }`}
               >
-                <h3 className="text-2xl font-bold text-[#001F3F] mb-2">{plan.name}</h3>
-                <p className="text-gray-600 mb-4">{plan.description}</p>
-                <div className="mb-6">
-                  <span className="text-4xl font-bold text-[#001F3F]">{plan.price}</span>
-                  {plan.price !== "Custom" && <span className="text-gray-600">/transaction</span>}
-                </div>
+                <h3 className={`text-2xl font-bold mb-2 ${plan.highlighted ? 'text-white' : 'text-[#001F3F]'}`}>
+                  {plan.name}
+                </h3>
+                <p className={`text-4xl font-bold mb-2 ${plan.highlighted ? 'text-[#2ECC71]' : 'text-[#001F3F]'}`}>
+                  {plan.price}
+                </p>
+                <p className={`mb-6 ${plan.highlighted ? 'text-gray-300' : 'text-gray-600'}`}>
+                  {plan.description}
+                </p>
+                <ul className="space-y-3 mb-8">
+                  {plan.features.map((feature, i) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <CheckCircle2 size={16} className={plan.highlighted ? 'text-[#2ECC71]' : 'text-[#2ECC71]'} />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
                 <Button 
-                  className={`w-full mb-6 ${
+                  className={`w-full ${
                     plan.highlighted 
                       ? 'bg-[#2ECC71] text-white hover:bg-[#26B35F]' 
-                      : 'border-[#2ECC71] text-[#2ECC71] hover:bg-[#2ECC71] hover:text-white'
+                      : 'bg-[#2ECC71] text-white hover:bg-[#26B35F]'
                   }`}
                   onClick={() => window.location.href = getLoginUrl()}
                 >
                   {plan.cta}
                 </Button>
-                <ul className="space-y-3">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2 text-gray-700">
-                      <CheckCircle2 size={18} className="text-[#2ECC71] flex-shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
           </div>
-          <p className="text-center text-gray-600 mt-8">All plans include 30-day free trial. No credit card required.</p>
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* CTA Section */}
       <section className="py-20 md:py-32 bg-gradient-to-br from-[#001F3F] to-[#003D5C] text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Secure Your Payments?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">{t("home.cta.title")}</h2>
           <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Join thousands of users and businesses already transacting with confidence on Afa'a Pay.
+            {t("home.cta.subtitle")}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              className="bg-[#2ECC71] text-white hover:bg-[#26B35F] text-lg px-8 py-6"
-              onClick={() => window.location.href = getLoginUrl()}
-            >
-              Start Free Trial Now
-            </Button>
-            <Button variant="outline" className="border-white text-white hover:bg-white hover:text-[#001F3F] text-lg px-8 py-6">
-              Schedule a Demo
-            </Button>
-          </div>
+          <Button 
+            className="bg-[#2ECC71] text-white hover:bg-[#26B35F] text-lg px-8 py-6"
+            onClick={() => window.location.href = getLoginUrl()}
+          >
+            {t("home.cta.button")}
+          </Button>
         </div>
       </section>
 
@@ -477,30 +477,30 @@ export default function Home() {
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <img src="/logo.png" alt="Afa'a Pay" className="h-8 mb-4" />
-              <p className="text-sm">Transact with Confidence</p>
+              <p className="text-sm">{t("common.tagline")}</p>
             </div>
             <div>
-              <h4 className="text-white font-bold mb-4">Product</h4>
+              <h4 className="text-white font-bold mb-4">{t("common.products")}</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#products" className="hover:text-[#2ECC71] transition">Features</a></li>
-                <li><a href="#pricing" className="hover:text-[#2ECC71] transition">Pricing</a></li>
-                <li><a href="#" className="hover:text-[#2ECC71] transition">Security</a></li>
+                <li><a href="/" className="hover:text-[#2ECC71] transition">{t("common.home")}</a></li>
+                <li><a href="#products" className="hover:text-[#2ECC71] transition">{t("common.products")}</a></li>
+                <li><a href="#pricing" className="hover:text-[#2ECC71] transition">{t("common.pricing")}</a></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-bold mb-4">Company</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-[#2ECC71] transition">About</a></li>
-                <li><a href="#" className="hover:text-[#2ECC71] transition">Blog</a></li>
-                <li><a href="#" className="hover:text-[#2ECC71] transition">Contact</a></li>
+                <li><a href="/" className="hover:text-[#2ECC71] transition">{t("common.about")}</a></li>
+                <li><a href="/blog" className="hover:text-[#2ECC71] transition">{t("common.blog")}</a></li>
+                <li><a href="/" className="hover:text-[#2ECC71] transition">{t("common.contact")}</a></li>
               </ul>
             </div>
             <div>
               <h4 className="text-white font-bold mb-4">Legal</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-[#2ECC71] transition">Privacy</a></li>
-                <li><a href="#" className="hover:text-[#2ECC71] transition">Terms</a></li>
-                <li><a href="#" className="hover:text-[#2ECC71] transition">Compliance</a></li>
+                <li><a href="/" className="hover:text-[#2ECC71] transition">{t("common.privacy")}</a></li>
+                <li><a href="/" className="hover:text-[#2ECC71] transition">{t("common.terms")}</a></li>
+                <li><a href="/" className="hover:text-[#2ECC71] transition">{t("common.compliance")}</a></li>
               </ul>
             </div>
           </div>
