@@ -1,0 +1,26 @@
+{
+  "name": "afaapay-strapi-cms",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Strapi CMS for Afa'a Pay - manages blog articles, testimonials, and use cases",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {
+    "@strapi/strapi": "^5.0.0",
+    "@strapi/plugin-users-permissions": "^5.0.0",
+    "@strapi/plugin-i18n": "^5.0.0",
+    "better-sqlite3": "^11.0.0"
+  },
+  "dependencies": {
+    "koa": "^2.15.0"
+  },
+  "engines": {
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=9.0.0"
+  },
+  "license": "MIT"
+}
