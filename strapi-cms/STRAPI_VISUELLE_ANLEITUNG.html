@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strapi Inhalte Erstellen - Visuelle Anleitung</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #001F3F 0%, #003D5C 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+        }
+        
+        .section h2 {
+            color: #001F3F;
+            font-size: 2em;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #2ECC71;
+        }
+        
+        .subsection {
+            margin-bottom: 30px;
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2ECC71;
+        }
+        
+        .subsection h3 {
+            color: #003D5C;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .step {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .step p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: white;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background: #001F3F;
+            color: white;
+            font-weight: bold;
+        }
+        
+        tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        
+        .tip {
+            background: #e8f5e9;
+            border-left: 4px solid #2ECC71;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .tip strong {
+            color: #2ECC71;
+        }
+        
+        .warning {
+            background: #fff3e0;
+            border-left: 4px solid #ff9800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        
+        .warning strong {
+            color: #ff9800;
+        }
+        
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            padding: 10px;
+            margin: 5px 0;
+            background: white;
+            border-radius: 4px;
+            border-left: 4px solid #2ECC71;
+        }
+        
+        .checklist li:before {
+            content: "✓ ";
+            color: #2ECC71;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .button {
+            display: inline-block;
+            background: #2ECC71;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin: 5px;
+            font-weight: bold;
+        }
+        
+        .button:hover {
+            background: #26B35F;
+        }
+        
+        footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #ddd;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 Strapi Inhalte Erstellen</h1>
+            <p>Vollständige visuelle Anleitung für Afa'a Pay CMS</p>
+        </header>
+        
+        <div class="content">
+            <!-- SECTION 1: BLOGARTIKEL -->
+            <div class="section">
+                <h2>📝 1. BLOGARTIKEL ERSTELLEN</h2>
+                
+                <div class="subsection">
+                    <h3>Schritt 1: Navigation</h3>
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <p>Öffne <strong>http://localhost:1337/admin</strong></p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <p>Klicke auf <strong>"Content Manager"</strong> im linken Menü</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <p>Wähle <strong>"Blog Articles"</strong> aus der Liste</p>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <h3>Schritt 2: Neuen Artikel erstellen</h3>
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <p>Klicke auf den Button <strong>"Create new entry"</strong> (oben rechts)</p>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <h3>Schritt 3: Felder ausfüllen</h3>
+                    <table>
+                        <tr>
+                            <th>Feld</th>
+                            <th>Beispielwert</th>
+                            <th>Beschreibung</th>
+                        </tr>
+                        <tr>
+                            <td><strong>title</strong></td>
+                            <td>How to Reduce Payment Fraud by 90%</td>
+                            <td>Der Titel des Artikels</td>
+                        </tr>
+                        <tr>
+                            <td><strong>slug</strong></td>
+                            <td>how-to-reduce-payment-fraud</td>
+                            <td>URL-freundlicher Name</td>
+                        </tr>
+                        <tr>
+                            <td><strong>excerpt</strong></td>
+                            <td>Learn the top strategies...</td>
+                            <td>Kurze Zusammenfassung</td>
+                        </tr>
+                        <tr>
+                            <td><strong>author</strong></td>
+                            <td>Sarah Johnson</td>
+                            <td>Name des Autors</td>
+                        </tr>
+                        <tr>
+                            <td><strong>date</strong></td>
+                            <td>2025-01-10</td>
+                            <td>Veröffentlichungsdatum</td>
+                        </tr>
+                        <tr>
+                            <td><strong>category</strong></td>
+                            <td>Security</td>
+                            <td>Kategorie des Artikels</td>
+                        </tr>
+                        <tr>
+                            <td><strong>language</strong></td>
+                            <td><strong>en</strong></td>
+                            <td>Sprache: en oder fr</td>
+                        </tr>
+                        <tr>
+                            <td><strong>featured</strong></td>
+                            <td>✓</td>
+                            <td>Auf Startseite anzeigen?</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="tip">
+                        <strong>💡 Tipp:</strong> Das "content" Feld unterstützt Markdown-Formatierung. Verwende # für Überschriften, ** für fett, - für Listen.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <h3>Schritt 4: Speichern und Veröffentlichen</h3>
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <p>Klicke <strong>"Save"</strong> (oben rechts)</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <p>Klicke <strong>"Publish"</strong> (oben rechts)</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <p>Bestätige die Veröffentlichung</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SECTION 2: TESTIMONIALS -->
+            <div class="section">
+                <h2>💬 2. TESTIMONIALS ERSTELLEN</h2>
+                
+                <div class="subsection">
+                    <h3>Schritt 1: Navigation</h3>
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <p>Klicke auf <strong>"Content Manager"</strong></p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <p>Wähle <strong>"Testimonials"</strong> aus der Liste</p>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <h3>Schritt 2: Felder ausfüllen</h3>
+                    <table>
+                        <tr>
+                            <th>Feld</th>
+                            <th>Beispielwert</th>
+                            <th>Beschreibung</th>
+                        </tr>
+                        <tr>
+                            <td><strong>name</strong></td>
+                            <td>John Doe</td>
+                            <td>Name der Person</td>
+                        </tr>
+                        <tr>
+                            <td><strong>company</strong></td>
+                            <td>TechStart Inc</td>
+                            <td>Unternehmensname</td>
+                        </tr>
+                        <tr>
+                            <td><strong>position</strong></td>
+                            <td>CEO</td>
+                            <td>Position/Titel</td>
+                        </tr>
+                        <tr>
+                            <td><strong>quote</strong></td>
+                            <td>Afa'a Pay transformed...</td>
+                            <td>Das Zitat (max 500 Zeichen)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>rating</strong></td>
+                            <td>5</td>
+                            <td>Bewertung 1-5 Sterne</td>
+                        </tr>
+                        <tr>
+                            <td><strong>language</strong></td>
+                            <td><strong>en</strong></td>
+                            <td>Sprache: en oder fr</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="tip">
+                        <strong>💡 Tipp:</strong> Erstelle mindestens 3-5 Testimonials pro Sprache für eine überzeugendere Seite.
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <h3>Schritt 3: Speichern und Veröffentlichen</h3>
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <p>Klicke <strong>"Save"</strong></p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <p>Klicke <strong>"Publish"</strong></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SECTION 3: USE CASES -->
+            <div class="section">
+                <h2>🎯 3. ANWENDUNGSFÄLLE ERSTELLEN</h2>
+                
+                <div class="subsection">
+                    <h3>Schritt 1: Navigation</h3>
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <p>Klicke auf <strong>"Content Manager"</strong></p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <p>Wähle <strong>"Use Cases"</strong> aus der Liste</p>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <h3>Schritt 2: Felder ausfüllen</h3>
+                    <table>
+                        <tr>
+                            <th>Feld</th>
+                            <th>Beispielwert</th>
+                            <th>Beschreibung</th>
+                        </tr>
+                        <tr>
+                            <td><strong>title</strong></td>
+                            <td>E-Commerce Store Owner</td>
+                            <td>Titel des Anwendungsfalls</td>
+                        </tr>
+                        <tr>
+                            <td><strong>slug</strong></td>
+                            <td>ecommerce-store-owner</td>
+                            <td>URL-freundlicher Name</td>
+                        </tr>
+                        <tr>
+                            <td><strong>description</strong></td>
+                            <td>How online sellers use...</td>
+                            <td>Beschreibung des Anwendungsfalls</td>
+                        </tr>
+                        <tr>
+                            <td><strong>segment</strong></td>
+                            <td>smes</td>
+                            <td>Zielgruppe: individuals, smes, enterprises, financial, government</td>
+                        </tr>
+                        <tr>
+                            <td><strong>benefits</strong></td>
+                            <td>[JSON Array]</td>
+                            <td>Liste der Vorteile (siehe unten)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>language</strong></td>
+                            <td><strong>en</strong></td>
+                            <td>Sprache: en oder fr</td>
+                        </tr>
+                    </table>
+                    
+                    <div class="tip">
+                        <strong>💡 Tipp:</strong> Das "benefits" Feld ist JSON. Kopiere die folgende Struktur:
+                    </div>
+                    
+                    <div class="code-block">
+[
+  "Accept payments from customers worldwide",
+  "Automatic escrow protection for every sale",
+  "Dispute resolution in 24-72 hours",
+  "Build trust score for better payment terms",
+  "Multiple payment methods (MTN, Orange, PayPal, Card)",
+  "Real-time sales analytics and reporting"
+]
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <h3>Verfügbare Segmente</h3>
+                    <ul class="checklist">
+                        <li><strong>individuals</strong> - Einzelpersonen & C2C</li>
+                        <li><strong>smes</strong> - KMU & Händler</li>
+                        <li><strong>enterprises</strong> - Großunternehmen</li>
+                        <li><strong>financial</strong> - Finanzinstitutionen</li>
+                        <li><strong>government</strong> - Regierung & Öffentlicher Sektor</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- SECTION 4: CHECKLISTE -->
+            <div class="section">
+                <h2>✅ CHECKLISTE: INHALTE NACH SPRACHE</h2>
+                
+                <div class="grid">
+                    <div class="subsection">
+                        <h3>Englisch (en)</h3>
+                        <ul class="checklist">
+                            <li>3-5 Blog-Artikel</li>
+                            <li>3-5 Testimonials</li>
+                            <li>5 Anwendungsfälle (für jeden Segment)</li>
+                            <li>Alle Inhalte veröffentlicht</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="subsection">
+                        <h3>Französisch (fr)</h3>
+                        <ul class="checklist">
+                            <li>3-5 Blog-Artikel (Übersetzungen)</li>
+                            <li>3-5 Testimonials (Übersetzungen)</li>
+                            <li>5 Anwendungsfälle (Übersetzungen)</li>
+                            <li>Alle Inhalte veröffentlicht</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SECTION 5: TESTING -->
+            <div class="section">
+                <h2>🔍 INHALTE TESTEN</h2>
+                
+                <div class="subsection">
+                    <h3>In der React-Anwendung</h3>
+                    <div class="step">
+                        <span class="step-number">1</span>
+                        <p>Starte die React-App: <code>pnpm dev</code></p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">2</span>
+                        <p>Gehe zur Blog-Seite: <code>http://localhost:3000/blog</code></p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">3</span>
+                        <p>Wechsle die Sprache (EN/FR) - Inhalte sollten sich ändern</p>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <p>Überprüfe, dass Testimonials und Use Cases laden</p>
+                    </div>
+                </div>
+                
+                <div class="subsection">
+                    <h3>API-Test</h3>
+                    <div class="code-block">
+# Alle Blog-Artikel (Englisch)
+curl "http://localhost:1337/api/blog-articles?filters[language][$eq]=en"
+
+# Alle Testimonials (Französisch)
+curl "http://localhost:1337/api/testimonials?filters[language][$eq]=fr"
+
+# Use Cases für SMEs (Englisch)
+curl "http://localhost:1337/api/use-cases?filters[segment][$eq]=smes&filters[language][$eq]=en"
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SECTION 6: TIPPS -->
+            <div class="section">
+                <h2>💡 TIPPS & BEST PRACTICES</h2>
+                
+                <div class="subsection">
+                    <h3>Slug-Konvention</h3>
+                    <p>✅ <strong>Richtig:</strong> how-to-reduce-fraud</p>
+                    <p>❌ <strong>Falsch:</strong> How_To_Reduce_Fraud</p>
+                </div>
+                
+                <div class="subsection">
+                    <h3>Mehrsprachige Inhalte</h3>
+                    <ul class="checklist">
+                        <li>Erstelle zuerst englische Inhalte</li>
+                        <li>Übersetze dann ins Französische</li>
+                        <li>Verwende die gleichen Slugs für beide Versionen</li>
+                    </ul>
+                </div>
+                
+                <div class="subsection">
+                    <h3>Veröffentlichungsstatus</h3>
+                    <p><strong>Draft:</strong> Nicht öffentlich sichtbar</p>
+                    <p><strong>Published:</strong> Öffentlich in der API verfügbar</p>
+                </div>
+                
+                <div class="warning">
+                    <strong>⚠️ Wichtig:</strong> Vergiss nicht, Inhalte zu veröffentlichen! Draft-Inhalte erscheinen nicht in der API.
+                </div>
+            </div>
+            
+            <!-- SECTION 7: NÄCHSTE SCHRITTE -->
+            <div class="section">
+                <h2>🚀 NÄCHSTE SCHRITTE</h2>
+                
+                <ol style="font-size: 1.1em; line-height: 2;">
+                    <li>✅ Erstelle Blog-Artikel (EN + FR)</li>
+                    <li>✅ Erstelle Testimonials (EN + FR)</li>
+                    <li>✅ Erstelle Anwendungsfälle (EN + FR)</li>
+                    <li>✅ Teste die Inhalte in der React-App</li>
+                    <li>✅ Veröffentliche die cms-version auf GitHub</li>
+                    <li>✅ Deploye auf Manus</li>
+                </ol>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Afa'a Pay CMS - Strapi Inhalte Erstellen Anleitung</p>
+            <p>Für weitere Hilfe siehe: STRAPI_INHALTE_ERSTELLEN.md</p>
+        </footer>
+    </div>
+</body>
+</html>
